@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Your Song Title] - Listen Now</title>
+    <!-- 
+        The CSS is embedded here to create a single, beautiful file.
+        This design uses a Neumorphism style for a high-end, branded look.
+    -->
+    <style>
+        /* --- Global Reset and Centering --- */
+        body {
+            font-family: 'Roboto', sans-serif;
+            /* Soft, medium-dark background color (the "canvas" for Neumorphism) */
+            background-color: #2e3239; 
+            color: #c0c4cc; /* Light gray text color */
+            margin: 0;
+            padding: 0;
+            /* Center the content perfectly */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        /* --- The Main Container (The Neumorphic "Card") --- */
+        .card {
+            background-color: #2e3239;
+            padding: 30px 40px;
+            border-radius: 30px; /* Highly rounded corners */
+            max-width: 420px;
+            width: 90%;
+            text-align: center;
+            
+            /* Neumorphism shadows: light on top/left, dark on bottom/right */
+            box-shadow: 
+                10px 10px 30px #24272c, /* Dark shadow for depth */
+                -10px -10px 30px #383d46; /* Light shadow for highlight */
+            transition: all 0.3s ease;
+        }
+
+        /* --- Titles --- */
+        .song-title {
+            font-size: 2.2em;
+            font-weight: 700;
+            /* Your Brand Color: Bright professional Blue accent color */
+            color: #4fc3f7; 
+            margin: 0 0 5px 0;
+        }
+
+        .artist-name {
+            font-size: 1.1em;
+            font-weight: 300;
+            color: #a8b0bf;
+            margin-bottom: 25px;
+        }
+
+        /* --- Cover Art --- */
+        .cover-art-container {
+            margin-bottom: 30px;
+        }
+
+        .cover-art {
+            width: 100%;
+            max-width: 280px;
+            height: auto;
+            border-radius: 15px;
+            
+            /* Cover Art also gets the Neumorphic inset look */
+            box-shadow: 
+                inset 5px 5px 10px #24272c, 
+                inset -5px -5px 10px #383d46;
+            
+            /* Subtle border to integrate with the background */
+            border: 5px solid #2e3239; 
+            transition: transform 0.4s ease;
+        }
+
+        .cover-art:hover {
+            transform: scale(1.02);
+        }
+
+        /* --- Audio Player --- */
+        .audio-player-container {
+            margin-top: 30px;
+        }
+
+        audio {
+            width: 100%;
+            /* Creating a sunken/pressed button effect for the player area */
+            border-radius: 50px;
+            outline: none;
+            padding: 10px 20px;
+            background-color: #2e3239;
+            box-shadow: 
+                inset 5px 5px 10px #24272c, 
+                inset -5px -5px 10px #383d46;
+        }
+
+        /* Customizing the default audio controls */
+        audio::-webkit-media-controls-panel {
+            background-color: transparent; /* Use the shadow background */
+        }
+        audio::-webkit-media-controls-play-button {
+            color: #4fc3f7; /* Brand color for the play button */
+        }
+
+        /* --- Responsive Adjustments --- */
+        @media (max-width: 480px) {
+            .card {
+                padding: 25px;
+                border-radius: 20px;
+                margin: 20px;
+            }
+            .song-title {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <header>
+            <!-- REMEMBER TO CHANGE THIS TITLE -->
+            <h1 class="song-title">The Morse Code Separator</h1>
+            <!-- REMEMBER TO CHANGE THIS ARTIST NAME -->
+            <p class="artist-name">by ahskapajar ayabatog</p>
+        </header>
+        
+        <main class="audio-section">
+            <div class="cover-art-container">
+                <!-- 
+                    CRUCIAL STEP 1: 
+                    Replace "your-cover-art.jpg" with the name of your image file. 
+                -->
+                <img src="morseimg.png" alt="Song Cover Art" class="cover-art">
+            </div>
+
+            <div class="audio-player-container">
+                <!-- 
+                    CRUCIAL STEP 2: 
+                    Replace "your-song-file.mp3" with the name of your music file. 
+                -->
+                <audio controls>
+                    <source src="songnumb1.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </main>
+    </div>
+    <!-- Load a clean font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+</body>
+</html>
